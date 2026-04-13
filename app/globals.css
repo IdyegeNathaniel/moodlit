@@ -1,26 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
+
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@theme{
+    --font-outfit: 'Outfit', sans-serif;
+    --font-playfair: 'Playfair Display', serif;
+    
+    --color-primary: #FF7A18;
+    --color-main: #1E88E5;
+    
+    /* LIGHT THEME */
+    --color-bg-light: #FAFAFA;
+    --color-light-muted: #687280;
+    --color-light-card: #FFFFFF;
+    --color-border-light: #E5E7EB;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* DARK THEME */
+    --color-bg-dark: #0F172A;
+    --color-dark-card: #1E293B;
+    --color-dark-muted: #1E88E5;
+    --color-border-dark: #334155;
+
+    /* RESPONSE */
+    --success: #9CAF88;
+    --warning: #F9D77E;
+    --error: #E07A5F;
+    --info: #6B5B95;
+
+    --color-plum: #6B4E71;
+    --color-plum-dark: #5A3F5F;
+    --color-plum-light: #8B6E91;
+    --color-coral: #E8927C;
+    --color-coral-dark: #D67B63;
+    --color-coral-light: #F5A894;
+
+     /* Mood Colors */
+    --mood-cozy: #D4A574;
+    --mood-dark: #6B5B95;
+    --mood-light: #F9D77E;
+    --mood-thoughtful: #5B8A72;
+    --mood-adventure: #E07A5F;
+    --mood-romantic: #C97B84;
+  
   }
+
+body{
+    background-color: #F3F4F6;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+
+/* /* ============================================
+   MOODLIT GLOBAL STYLES
+   ============================================ */
+
+/* Tailwind Base Imports */
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+/* ============================================
+   ROOT VARIABLES - LIGHT THEME
+   ============================================ */
+:root {
+  /* Brand Colors */
+ 
+  
+ 
+  /* Neutrals - Light Theme */
+  --background: #FAFAFA;
+  --foreground: #2D3142;
+  --card-bg: #FFFFFF;
+  --border: #E5E7EB;
+  --text-muted: #6B7280;
+
+  
+  
+  /* Typography */
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', 'Roboto', sans-serif;
+  --font-serif: 'Playfair Display', 'Georgia', serif;
+  --font-mono: 'Fira Code', 'Consolas', monospace;
+  
 }
+
+/* ============================================
+   DARK THEME
+   ============================================ */
+[data-theme="dark"],
+.dark {
+  --background: #0F172A;
+  --foreground: #F1F5F9;
+  --card-bg: #1E293B;
+  --border: #334155;
+  --text-muted: #94A3B8;
+  --sidebar-bg: #1E293B;
+  --sidebar-hover: #334155;
+  
+}
+
+
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--plum) 0%, var(--coral) 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(107, 78, 113, 0.3);
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(107, 78, 113, 0.4);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--plum);
+  border: 2px solid var(--plum);
+}
+
+.btn-secondary:hover {
+  background: var(--plum);
+  color: white;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--foreground);
+}
+
+.btn-ghost:hover {
+  background: var(--sidebar-hover);
+}
+
+/* ============================================
+   CARDS
+   ============================================ */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  transition: all var(--transition-slow);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+}
+
+.card-compact {
+  padding: 1rem;
+}
+
+/* ============================================
+   MOOD CARDS
+   ============================================ */
+.mood-card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.mood-card::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  opacity: 0.1;
+  filter: blur(20px);
+  transition: opacity var(--transition-base);
+}
+
+.mood-card:hover::before {
+  opacity: 0.15;
+}
+
+.mood-card.cozy::before {
+  background: var(--mood-cozy);
+}
+
+.mood-card.dark::before {
+  background: var(--mood-dark);
+}
+
+.mood-card.light::before {
+  background: var(--mood-light);
+}
+
+.mood-card.thoughtful::before {
+  background: var(--mood-thoughtful);
+}
+
+.mood-card.adventure::before {
+  background: var(--mood-adventure);
+}
+
+.mood-card.romantic::before {
+  background: var(--mood-romantic);
+}
+
+/* ============================================
+   INPUTS
+   ============================================ */
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--card-bg);
+  color: var(--foreground);
+  transition: all var(--transition-base);
+  width: 100%;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--plum);
+  box-shadow: 0 0 0 3px rgba(107, 78, 113, 0.1);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-muted);
+}
+
+
+/* ============================================
+   UTILITIES
+   ============================================ */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, rgba(107, 78, 113, 0.1) 0%, rgba(232, 146, 124, 0.1) 100%);
+}
+
+.gradient-bg-dark {
+  background: linear-gradient(135deg, rgba(107, 78, 113, 0.2) 0%, rgba(232, 146, 124, 0.2) 100%);
+}
+
