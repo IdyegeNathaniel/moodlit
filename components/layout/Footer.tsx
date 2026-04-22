@@ -2,9 +2,9 @@ import React from 'react'
 
 const Footer: React.FC = () => {
   return (
-    <section className='text-center p-8 text-light-muted border border-t-border-light'>
-        <p className='text-sm md:text-base font-semibold'>
-          © 2026 Moodlit. <br className='flex md:hidden' /> Find your next read based on how you feel.
+    <section className='text-center py-4 px-8 text-light-muted border border-t-border-light'>
+        <p className='text-xs md:text-sm font-'>
+          © 2026 Moodlit. Find your next read based on how you feel.
         </p>
     </section>
   )

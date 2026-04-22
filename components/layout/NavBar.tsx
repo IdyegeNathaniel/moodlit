@@ -16,7 +16,7 @@ const NavBar: React.FC = () => {
 
 
   return (
-    <section className="w-full h-20 flex justify-between items-center px-5 py-4 border-b-2 border-gray-200">
+    <section className="w-full h-20 top-0 sticky z-20 bg-white/5 backdrop-blur-md flex justify-between items-center px-5 py-4 border-b-2 border-gray-200">
       <div className="flex shrink-0 items-center gap-3">
         <BookOpen size={32} color="#6B4E71" strokeWidth={2} />
         <h1 style={LogoStyle}>MoodLit</h1>
