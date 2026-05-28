@@ -1,15 +1,31 @@
 "use client";
 
 import { moods } from "@/Const";
-import { BookOpen, Clock, Heart, Sparkles, TrendingUp } from "lucide-react";
+import { Clock, Sparkles, TrendingUp } from "lucide-react";
 import BookCard from "./books/BookCard";
 import { Button } from "./ui/button";
 import Link from "next/link";
-import { Input } from "./ui/input";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "motion/react";
+import BookSearch from "./books/BookSearch";
+import EmptyShelf from "./shelves/EmptyShelf";
+import MoodSelector from "./moods/MoodSelector";
+
+const getGreetings = () => {
+  const hour = new Date().getHours();
+  if (hour >= 5 && hour < 12) {
+    return "morning";
+  } else if (hour >= 12 && hour < 17) {
+    return "noon";
+  } else if (hour >= 17 && hour < 21) {
+    return "evening";
+  } else {
+    return "night";
+  }
+};
 
 const Hero = () => {
+  const [greeting, setGreeting] = useState(getGreetings);
   const [activeTab, setActiveTab] = useState<string>("Moods");
 
   const TextStyle = {
@@ -19,13 +35,19 @@ const Hero = () => {
     backgroundClip: "text",
   };
 
+  //GREETINGS UPDATE
+
+  useEffect(() => {
+    const interval = setInterval(() => setGreeting(getGreetings()), 60 * 1000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="w-full min-h-50 py-10">
       <div className="w-full md:max-w-7xl flex flex-col items-center justify-center mx-auto">
-        {/* Input Box */}
-
-        <div className="w-full md:w-xl px-4 mt-5 mb-10">
-          <Input placeholder="search for books, authors, or moods" />
+        {/* INPUT BOX */}
+        <div className="w-full md:w-xl flex items-center px-4 mt-5 mb-10">
+          <BookSearch />
         </div>
 
         <div className="bg-linear-150 from-gray-200 to-gray-100 flex items-center rounded-full px-4 py-2 mb-3 border border-border-light">
@@ -36,7 +58,7 @@ const Hero = () => {
           <h2 className="text-3xl md:text-5xl font-bold">
             What are you in the <br />
             <span className="" style={TextStyle}>
-              mood for?
+              mood for this {greeting}?
             </span>
           </h2>
           <p className="max-w-[250px] md:max-w-full text-sm md:text-xl text-light-muted my-0 mx-auto">
@@ -48,7 +70,10 @@ const Hero = () => {
         {/* TABS */}
 
         <div className="w-full my-12 flex flex-col items-center space-y-7">
-          <motion.div animate={{}} className="w-full flex items-center justify-center gap-10 ">
+          <motion.div
+            animate={{}}
+            className="w-full flex items-center justify-center gap-10 "
+          >
             {Tabs.map((tab) => (
               <div
                 className={`flex items-center justify-center text-sm md:text-base text-light-muted font-medium gap-2 cursor-pointer pb-2 ${activeTab === tab.name ? "text-plum border-plum border-b-2" : ""}`}
@@ -64,16 +89,13 @@ const Hero = () => {
 
         {activeTab === "Moods" ? (
           // MOODS
-
-          <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 px-4 md:px-6">
-            {moods.map((mood) => (
-              <BookCard key={mood.id} mood={mood} />
-            ))}
-          </div>
+          <>
+            <MoodSelector />
+          </>
         ) : activeTab === "Trending" ? (
-          <div>trending empty</div>
+          <EmptyShelf />
         ) : (
-          <div>recent empty</div>
+          <EmptyShelf />
         )}
 
         {/* Explore */}
@@ -102,7 +124,6 @@ const Tabs = [
   {
     name: "Moods",
     icon: <Sparkles className="w-4 h-4" />,
-    
   },
   {
     name: "Trending",
