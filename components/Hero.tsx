@@ -1,8 +1,6 @@
 "use client";
 
-import { moods } from "@/Const";
 import { Clock, Sparkles, TrendingUp } from "lucide-react";
-import BookCard from "./books/BookCard";
 import { Button } from "./ui/button";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -93,9 +91,9 @@ const Hero = () => {
             <MoodSelector />
           </>
         ) : activeTab === "Trending" ? (
-          <EmptyShelf />
+          <EmptyShelf activeTab={activeTab} />
         ) : (
-          <EmptyShelf />
+          <EmptyShelf activeTab={activeTab} />
         )}
 
         {/* Explore */}
