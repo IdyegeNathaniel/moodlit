@@ -7,7 +7,9 @@ interface ProcessRowProps {
 }
 
 const GhostSteps: React.FC<{ num: string }> = ({ num }) => {
-  <p className="block text-4xl font-playfair text-coral/50 font-bold opacity-">{num}</p>;
+  return(
+    <p className="block text-[clamp(80px,12vw,150px)] font-playfair text-coral/20 font-extrabold leading-1 -tracking-wider -mb-1">{num}</p>
+  )
 };
 
 const ProcessRows: React.FC<ProcessRowProps> = ({ step, index }) => {
@@ -16,10 +18,10 @@ const ProcessRows: React.FC<ProcessRowProps> = ({ step, index }) => {
   const TextBlock = (
     <div className="flex-1">
       <GhostSteps num={step.step} />
-      <p className={`text-4xl md:text-6xl ${index % 2 === 1 ? "text-coral" : "text-plum"} font-semibold font-inter mb-2.5`}>
+      <p className={`text-4xl md:text-6xl ${index % 2 === 1 ? "text-coral" : "text-plum"} font-semibold font-inter mb-2.5 -tracking-[0.025em] leading-[1.15]`}>
         {step.title}
-      </p>
-      <div className="w-9 h-px bg-muted-foreground opacity-5 mb-2.5" />
+      </p> 
+      <div className="w-9 h-px bg-coral/50 mb-2.5" />
       <p className="font-outfit text-base">{step.description}</p>
     </div>
   );
