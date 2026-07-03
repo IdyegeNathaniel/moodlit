@@ -16,7 +16,7 @@ const ProcessRows: React.FC<ProcessRowProps> = ({ step, index }) => {
   const TextBlock = (
     <div className="flex-1">
       <GhostSteps num={step.step} />
-      <p className="text-4xl md:text-6xl text-coral-light font-semibold mb-2.5">
+      <p className={`text-4xl md:text-6xl ${index % 2 === 1 ? "text-coral" : "text-plum"} font-semibold font-inter mb-2.5`}>
         {step.title}
       </p>
       <div className="w-9 h-px bg-muted-foreground opacity-5 mb-2.5" />
