@@ -3,9 +3,9 @@ import { Switch } from "./ui/switch"
 import { Label } from "./ui/label"
 
 
-const DialogBox: React.FC = () => {
+const MoreOpts: React.FC = () => {
   return (
-     <div className="absolute h-24 md:h-36 w-60 bg-[#F3F4F6] top-20 right-5 md:p-2 rounded-lg shadow-lg">
+     <div className="absolute h-24 md:h-36 w-60 bg-[#F3F4F6] top-14 right-5 md:p-2 rounded-lg shadow-lg">
         <div className="h-full w-full flex flex-col gap-1 md:gap-3">
             <div className="h-1/2 w-full flex items-center justify-center gap-2 px-2 md:px-4 hover:bg-plum-light/10 transition-colors rounded-lg">
                 <Moon size={18} />
@@ -15,6 +15,7 @@ const DialogBox: React.FC = () => {
                 </span>
                 
             </div>
+            
             <div className="h-1/2 w-full flex items-center justify-center gap-2 px-2 md:px-4 hover:bg-plum-light/10 transition-colors rounded-lg">
                 <Globe size={18} />
                 <div className="flex flex-1 items-center justify-between">
@@ -32,4 +33,4 @@ const DialogBox: React.FC = () => {
   )
 }
 
-export default DialogBox
+export default MoreOpts

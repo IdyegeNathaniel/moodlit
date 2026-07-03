@@ -1,49 +1,45 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { Button } from "../ui/button"
-import { BookOpen, MoreHorizontal } from "lucide-react"
-import { useState } from "react"
-import DialogBox from "../dialogBox"
-
+import Link from "next/link";
+import { Button } from "../ui/button";
+import { BookOpen, MoreHorizontal } from "lucide-react";
+import { useState } from "react";
+import MoreOpts from "../moreOpts";
+import { useClickOutside } from "@/hooks/useClickOut";
 
 const NavBar: React.FC = () => {
- 
   const [showOptions, setShowOptions] = useState<boolean>(false);
 
-  const LogoStyle = {
-            fontSize: '1.75rem', 
-            fontWeight: '700',
-            margin: 0,
-            background: 'linear-gradient(135deg, #6B4E71 0%, #E8927C 100%)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text'
-          }
-
-
-          const showDialog = () => {
-           
-          };
+  const menuRef = useClickOutside(() => setShowOptions(false));
 
   return (
-    <section className="w-full h-20 top-0 sticky z-20 bg-white/5 backdrop-blur-md flex justify-between items-center px-5 py-4 border-b-2 border-gray-200">
-      <div className="flex shrink-0 items-center gap-3">
+    <nav className="w-full h-20 top-0 sticky z-20 bg-white/5 backdrop-blur-md flex justify-between items-center px-5 py-4 border-b-2 border-gray-200">
+      
+      <Link href="/" className="flex shrink-0 items-center gap-3">
         <BookOpen size={32} color="#6B4E71" strokeWidth={2} />
-        <h1 style={LogoStyle}>MoodLit</h1>
-      </div>
-      <div className="flex items-center gap-4">
+        <h1
+          className="text-2xl font-bold bg-linear-to-r from-plum to-coral bg-clip-text text-transparent hidden sm:block
+        ">
+          MoodLit
+        </h1>
+      </Link>
+
+      <div className="flex items-center gap-4" ref={menuRef}>
         <Button variant={"secondary"} asChild>
-          <Link href={"/login"}>Sign In</Link>
+          <Link href="/login">Sign In</Link>
         </Button>
-        <button className="p-2 rounded-md hover:bg-gray-200/50 transition-colors cursor-pointer" onClick={() => setShowOptions(prev => !prev)}>
+
+        <button
+          className="p-2 rounded-md hover:bg-gray-200/50 transition-colors cursor-pointer"
+          onClick={() => setShowOptions((prev) => !prev)}
+        >
           <MoreHorizontal size={24} color="#6B4E71" strokeWidth={2} />
         </button>
-        
-      </div>
-      {showOptions ? <DialogBox /> : null}
-    </section>
-  )
-}
 
-export default NavBar
+        {showOptions ? <MoreOpts /> : null}
+      </div>
+    </nav>
+  );
+};
+
+export default NavBar;
