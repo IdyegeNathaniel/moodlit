@@ -47,14 +47,12 @@ const ProcessSection: React.FC = () => {
       <div className="container max-w-7xl flex flex-col items-center justify-center mx-auto">
           <div className="mb-16 text-center">
           <h2 className="
-            font-semibold text-4xl sm:text-5xl lg:text-6xl bg-linear-to-r from-plum to-coral bg-clip-text text-transparent"
+            font-semibold text-4xl sm:text-5xl lg:text-6xl mb-3 bg-linear-to-r from-plum to-coral bg-clip-text text-transparent"
           >
             How MoodLit Works
           </h2>
-          <p className={`
-            mt-4 text-lg text-gray-600'}
-          `}>
-            Discover your next book in 3 simple steps
+          <p className="mt-4 text-lg text-gray-600">
+            From mood to masterpiece in three simple steps.
           </p>
         </div>
 
