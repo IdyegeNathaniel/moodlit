@@ -11,3 +11,8 @@ const Footer: React.FC = () => {
 }
 
 export default Footer
+
+
+//  <p className='text-xs md:text-sm font-'>
+//           © 2026 Moodlit. Find your next read based on how you feel.
+//         </p>

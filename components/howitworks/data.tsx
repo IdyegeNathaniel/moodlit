@@ -26,7 +26,7 @@ export const ProcessSteps: ProcessTypes[] = [
     {
         step: "03",
         tag: "Reading",
-        title: "Start Your Next Read",
+        title: "Start Your Next Adventure",
         description: "Step into a story that feels intentionally chosen for you—because the right book can transform an ordinary moment into an unforgettable one.",
         image: "/images/step3.png"
     },

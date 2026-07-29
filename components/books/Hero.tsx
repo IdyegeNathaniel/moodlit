@@ -1,13 +1,11 @@
 "use client";
 
 import { Clock, Sparkles, TrendingUp } from "lucide-react";
-import { Button } from "./ui/button";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
-import BookSearch from "./books/BookSearch";
-import EmptyShelf from "./shelves/EmptyShelf";
-import MoodSelector from "./moods/MoodSelector";
+import BookSearch from "./BookSearch";
+import EmptyShelf from "../shelves/EmptyShelf";
+import MoodSelector from "../moods/MoodSelector";
 
 const getGreetings = () => {
   const hour = new Date().getHours();

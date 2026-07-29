@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Syne:wght@400..800&display=swap');
+
 
 @import "tailwindcss";
 
@@ -6,12 +7,14 @@
 @theme{
     --font-outfit: 'Outfit', sans-serif;
     --font-playfair: 'Playfair Display', serif;
+    --font-syne: 'Syne', sans-serif;
+    --font-raleway: 'raleway', sans-serif;
     
     --color-primary: #FF7A18;
     --color-main: #1E88E5;
     
     /* LIGHT THEME */
-    --color-bg-light: #FAFAFA;
+    --color-light: #FAFAFA;
     --color-light-muted: #687280;
     --color-light-card: #FFFFFF;
     --color-border-light: #E5E7EB;

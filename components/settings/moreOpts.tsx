@@ -1,6 +1,6 @@
 import { ArrowRightIcon, Globe, Moon} from "lucide-react"
-import { Switch } from "./ui/switch"
-import { Label } from "./ui/label"
+import { Switch } from "../ui/switch"
+import { Label } from "../ui/label"
 
 
 const MoreOpts: React.FC = () => {

@@ -1,16 +1,18 @@
+
+import Advantage from "@/components/adantages";
 import Cta from "@/components/cta";
-import Hero from "@/components/Hero";
 import ProcessSection from "@/components/howitworks";
-
-
+import Problem from "@/components/problems";
+import PublicHero from "@/components/public/hero";
 
 export default function page() {
   return (
-    <main className="0">
-      <Hero />
+    <main className="">
+      <PublicHero />
+      <Problem />
       <ProcessSection />
+      <Advantage />
       <Cta />
-      
     </main>
-  )
+  );
 }

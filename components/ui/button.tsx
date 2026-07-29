@@ -13,6 +13,8 @@ const buttonVariants = cva(
           "bg-[#6B4E71] text-white hover:bg-[#6B4E74] hover:scale-105 hover:shadow-md focus-visible:ring-[#2563EB]",
         secondary:
           "bg-transparent border-2 border-[#6B4E71] text-[#6B4E71] hover:text-white hover:bg-[#6B4E71] hover:border-[#6B4E71] shadow-sm focus-visible:ring-[#6B4E71]",
+        outline: 
+          "text-white hover:text-[#6B4E71] hover:bg-[#fff] border-2 border-[#fff] hover:scale-105 hover:shadow-md focus-visible:ring-[#dedede]",
         ghost:
           "text-[#6B4E71] hover:bg-[#F9FAFB] hover:text-[#2563EB]",
         success:

@@ -26,7 +26,7 @@ const ImagePanel: React.FC<{ src: string; alt: string; step: string }> = ({ src,
       />
 
       {/* Gradient overlay */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-secondary/20 to-transparent" />
+      <div className="pointer-events-none absolute inset-0 bg-linear-to-br from-secondary/20 to-transparent" />
     </div>
   );
 };

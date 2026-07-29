@@ -1,7 +1,10 @@
-import React from 'react'
+import Hero from "@/components/books/Hero";
+
 
 export default function page() {
   return (
-    <div>All Moods</div>
+    <>
+      <Hero />
+    </>
   )
 }

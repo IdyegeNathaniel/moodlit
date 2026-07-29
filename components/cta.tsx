@@ -6,7 +6,7 @@ const Cta = () => {
   return (
     <>
         <div className="w-full bg-linear-150 from-red-100 to-green-100 text-center rounded-2xl py-12 px-8 border border-border-light mt-6">
-          <Sparkles className="text-plum mb-4 stroke-1 w-8 h-8 md:w-12 md:h-12" />
+          <Sparkles className="text-plum mb-4 stroke-1 w-8 h-8 md:w-12 md:h-12 animate-pulse duration-300 transition-all" />
           <h3 className="text-2xl md:text-4xl font-bold ml-">
             Ready to find your next read?
           </h3>

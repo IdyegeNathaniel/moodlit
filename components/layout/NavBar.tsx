@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Button } from "../ui/button";
 import { BookOpen, MoreHorizontal } from "lucide-react";
 import { useState } from "react";
-import MoreOpts from "../moreOpts";
+import MoreOpts from "../settings/moreOpts";
 import { useClickOutside } from "@/hooks/useClickOut";
 
 const NavBar: React.FC = () => {
