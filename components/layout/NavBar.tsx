@@ -26,7 +26,7 @@ const NavBar: React.FC = () => {
 
       <div className="flex items-center gap-4" ref={menuRef}>
         <Button variant={"secondary"} asChild>
-          <Link href="/login">Sign In</Link>
+          <Link href="/sign-in">Sign In</Link>
         </Button>
 
         <button

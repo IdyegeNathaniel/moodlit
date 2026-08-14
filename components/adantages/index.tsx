@@ -28,7 +28,7 @@ const Advantage: React.FC = () => {
       <div className="w-full md:min-w-6xl flex flex-col items-center mx-auto">
         <div className="w-full flex flex-col justify-start items-">
           <Eyebrow text="why moodlit" />
-          <h2 className="font-bold text-3xl sm:text-5xl lg:text-6xl mb-3 font-syne">
+          <h2 className=" text-coral font-bold text-3xl sm:text-5xl lg:text-6xl mb-3 font-syne">
             Why Readers Love <br />
             <span className="text-plum">MoodLit.</span>
           </h2>

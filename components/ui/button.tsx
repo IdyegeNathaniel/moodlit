@@ -1,6 +1,6 @@
 import * as React from "react"
 import { cva, type VariantProps } from "class-variance-authority"
-import { Slot } from "radix-ui"
+import { Slot } from "radix-ui";
 
 import { cn } from "@/lib/utils"
 
@@ -10,30 +10,32 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default: 
-          "bg-[#6B4E71] text-white hover:bg-[#6B4E74] hover:scale-105 hover:shadow-md focus-visible:ring-[#2563EB]",
+          "group bg-[#6B4E71] text-white hover:bg-[#6B4E74] hover:scale-105 hover:shadow-md focus-visible:ring-[#2563EB]",
         secondary:
           "bg-transparent border-2 border-[#6B4E71] text-[#6B4E71] hover:text-white hover:bg-[#6B4E71] hover:border-[#6B4E71] shadow-sm focus-visible:ring-[#6B4E71]",
         outline: 
           "text-white hover:text-[#6B4E71] hover:bg-[#fff] border-2 border-[#fff] hover:scale-105 hover:shadow-md focus-visible:ring-[#dedede]",
         ghost:
-          "text-[#6B4E71] hover:bg-[#F9FAFB] hover:text-[#2563EB]",
+          "text-[#6B4E71] border border-[#9CA3AF] hover:bg-[#F9FAFB] hover:text-[#2563EB]",
         success:
-          "bg-[--success] text-white hover:bg-[#059669] hover:scale-105 shadow-md focus-visible:ring-[#10B981]",
+          "group bg-[#059669] text-white hover:bg-[#059670] shadow-md focus-visible:ring-[#10B981]",
         error:
           "bg-[#EF4444] text-white hover:bg-[#DC2626] hover:scale-105 shadow-md focus-visible:ring-[#EF4444]",
         warning:
           "bg-[#F59E0B] text-white hover:bg-[#D97706] hover:scale-105 shadow-md focus-visible:ring-[#F59E0B]",
         info:
           "bg-[#2563EB] text-white hover:bg-[#1D4ED8] hover:scale-105 shadow-md focus-visible:ring-[#2563EB]",
+        except:
+          "group bg-[#6B4E71] text-white hover:bg-[#6B4E74] hover:shadow-md focus-visible:ring-[#2563EB]",
       },
       size: {
         default: "h-10 px-6 py-3 rounded-md text-base has-[>svg]:px-3",
         sm: "h-8 px-3 py-1.5 rounded-full text-sm gap-1.5 has-[>svg]:px-2.5",
         lg: "h-12 px-6 py-3 rounded-full text-base has-[>svg]:px-5",
         xl: "h-14 px-9 py-4 rounded-xl text-lg has-[>svg]:px-7",
-        icon: "size-10 rounded-full",
-        "icon-sm": "size-8 rounded-full",
-        "icon-lg": "size-12 rounded-full",
+        icon: "bg-transparent! hover:border-none! hover:outline-none! size-10",
+        "icon-sm": "size-8 ",
+        "icon-lg": "size-12 ",
       },
     },
     defaultVariants: {

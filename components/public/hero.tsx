@@ -31,7 +31,7 @@ const PublicHero: React.FC = () => {
 
           <div className="">
             <Button size={"xl"} variant={"outline"} asChild>
-                <Link href={"/books"}>Get Started Free</Link>
+                <Link href={"/moods"}>Get Started Free</Link>
             </Button>
           </div>
         </div>
