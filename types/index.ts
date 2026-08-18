@@ -7,6 +7,7 @@ export interface MoodTypes {
   description: string;
   color: string;
   books: number;
+  query: string;
 }
 
 export interface ProblemTypes {

@@ -9,6 +9,7 @@ export const moods: MoodTypes[] = [
     description: "Warm, gentle reads that feel like a hug",
     color: "#D4A574",
     books: 342,
+    query: "cozy comfort fiction",
   },
   {
     id: "dark",
@@ -17,6 +18,7 @@ export const moods: MoodTypes[] = [
     description: "Gripping, complex, emotionally heavy",
     color: "#6B5B95",
     books: 289,
+    query: "dark psychological thriller",
   },
   {
     id: "light",
@@ -25,6 +27,7 @@ export const moods: MoodTypes[] = [
     description: "Fun, upbeat, makes you smile",
     color: "#F9D77E",
     books: 412,
+    query: "humor lighthearted fiction",
   },
   {
     id: "thoughtful",
@@ -33,6 +36,7 @@ export const moods: MoodTypes[] = [
     description: "Deep, philosophical, mind-expanding",
     color: "#5B8A72",
     books: 356,
+    query: "philosophical mind-expanding fiction",
   },
   {
     id: "adventure",
@@ -41,6 +45,7 @@ export const moods: MoodTypes[] = [
     description: "Epic journeys and thrilling quests",
     color: "#E07A5F",
     books: 298,
+    query: "adventure fantasy epic quest",
   },
   {
     id: "romantic",
@@ -49,6 +54,7 @@ export const moods: MoodTypes[] = [
     description: "Heartfelt, passionate love stories",
     color: "#C97B84",
     books: 387,
+    query: "romance novel love story",
   },
 ];
 

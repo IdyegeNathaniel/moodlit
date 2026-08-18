@@ -14,7 +14,7 @@ const Cta = () => {
             Join thousands of readers discovering books that match their mood
           </p>
           <Button asChild className="cursor-pointer" size={"xl"}>
-            <Link href={"/"}>Get Started Free</Link>
+            <Link href={"/book"}>Get Started Free</Link>
           </Button>
         </div>
     </>

@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
 
-// Replace with your actual type
+
 type MoodId = string;
 
 interface MoodLitState {

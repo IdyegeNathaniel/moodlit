@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Outfit, Syne, Raleway } from "next/font/google";
-import "../globals.css";
+import "./globals.css";
 import NavBar from "@/components/layout/NavBar";
 import Footer from "@/components/layout/Footer";
-import Providers from "../provider";
+import Providers from "./provider";
 
 const outfit = Outfit({
   variable: "--font-outfit",
