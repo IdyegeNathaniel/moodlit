@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Outfit, Syne, Raleway } from "next/font/google";
 import "./globals.css";
-import NavBar from "@/components/layout/NavBar";
-import Footer from "@/components/layout/Footer";
 import Providers from "./provider";
 
 const outfit = Outfit({
@@ -38,11 +36,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${outfit.variable} ${playfair.variable} ${raleway.variable} ${syne.variable} antialiased`}>
-        <NavBar />
           <Providers>
             {children}
           </Providers>
-        <Footer />
       </body>
     </html>
   );

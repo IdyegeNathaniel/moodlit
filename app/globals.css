@@ -52,6 +52,10 @@ body{
     background-color: #F3F4F6;
 }
 
+::-webkit-scrollbar {
+    @apply hidden;
+}
+
 
 /* /* ============================================
    MOODLIT GLOBAL STYLES

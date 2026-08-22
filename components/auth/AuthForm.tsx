@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronRight, Eye, EyeClosed, Lock, Mail, User } from "lucide-react";
+import { ChevronLeft, ChevronRight, Eye, EyeClosed, Lock, Mail, User } from "lucide-react";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { useState } from "react";
@@ -16,29 +16,39 @@ const AuthForm: React.FC<{ mode: "signup" | "signin" }> = ({ mode }) => {
     useAuthForm(mode);
 
   return (
-    <section className="w-full min-h-screen overflow-hidden">
-      <div className="min-h-screen grid md:grid-cols-2 font-syne">
+    <section className="w-full h-screen overflow-hidden">
+      <div className="h-full grid md:grid-cols-2 font-syne">
 
-          <div className="hidden md:block relative w-full h-full">
-            <div className="absolute inset-0 bg-linear-to-b from-[plum] to-[plum]/70 opacity-80 z-10" />
-            <Image
-              src={banner}
-              className="w-full object-cover"
-              priority
-              fill
-              alt="moodlit-Onboarding"
-            />
+        {/* LEFT CONTAINER */}
+        <div className="hidden md:block relative w-full h-full">
+          {/* <div className="absolute inset-0 bg-linear-to-b from-[plum] to-[plum]/70 opacity-80 z-10" /> */}
+          <Image
+            src={banner}
+            className="object-cover"
+            fill
+            priority
+            alt="moodlit-Onboarding"
+          />
         </div>
 
-        <div className="relative flex flex-col gap-3 justify-center items-center py-10 md:py-12 px-6 md:px-10">
-          
+        {/* RIGHT CONTAINER */}
+        <div className="relative h-full overflow-y-auto">
+          <div className="min-h-full flex flex-col gap-3 items-center py-10 md:py-12 px-6 md:px-10">
           <div className="absolute top-6 left-6 md:top-10 md:left-10">
-            <Button size="sm" variant="ghost" className="text-sm border-none" onClick={() => window.history.back()} aria-label="Go back">
+            <Button
+              size="sm"
+              variant="ghost"
+              className="text-sm border-none"
+              onClick={() => window.history.back()}
+              aria-label="Go back"
+            >
+              <ChevronLeft className="w-4 h-4" />
               Go Back
             </Button>
           </div>
+
           {/* FORM */}
-          <div className="w-full max-w-md bg-white p-10 rounded-xl shadow-md my-5">
+          <div className="w-full max-w-md bg-white md:p-10 p-3 rounded-xl shadow-md my-5">
             <div className="flex flex-col gap-2">
               <h2 className="text-3xl font-bold tracking-tight">
                 {isRegister ? "Create Account" : "Sign In"}
@@ -50,7 +60,6 @@ const AuthForm: React.FC<{ mode: "signup" | "signin" }> = ({ mode }) => {
               </p>
             </div>
 
-            
             <form className="flex flex-col gap-4 mt-5" onSubmit={onSubmit}>
               {isRegister && (
                 <div className="flex flex-col gap-2">
@@ -174,16 +183,17 @@ const AuthForm: React.FC<{ mode: "signup" | "signin" }> = ({ mode }) => {
                 type="submit"
                 variant="except"
                 size="xl"
+                className="text-sm"
                 disabled={isSubmitting}
               >
-                {isRegister ? "Continue" : "Get Started"}{" "}
+                {isRegister ? "Continue" : "Get Started" }{" "}
                 <ChevronRight
                   size={18}
                   className="group-hover:translate-x-1 font-bold"
                 />
               </Button>
 
-              <div className="flex items-center my-5">
+              <div className="flex items-center my-2 md:my-3">
                 <div className="h-[0.05rem] flex-1 bg-gray-400" />
                 <p className="px-2 text-gray-400 text-sm tracking-tighter">
                   OR
@@ -214,6 +224,8 @@ const AuthForm: React.FC<{ mode: "signup" | "signin" }> = ({ mode }) => {
             </div>
           </div>
         </div>
+        </div>
+        
       </div>
     </section>
   );

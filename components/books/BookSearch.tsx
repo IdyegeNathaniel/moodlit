@@ -76,27 +76,30 @@ const BookSearch = () => {
       </div>
 
       {/* Results */}
-      {isLoading && (
-        <p className="text-sm text-muted-foreground">Searching...</p>
-      )}
-      {isError && (
-        <p className="text-sm text-red-500">
-          Error occurred while fetching books.
-        </p>
-      )}
+      <div className="flex flex-col items-center">
+        {isLoading && (
+          <p className="text-sm text-muted-foreground">Searching...</p>
+        )}
+        {isError && (
+          <p className="text-sm text-red-500">
+            Error occurred while fetching books.
+          </p>
+        )}
 
-      {books.length > 0 && (
-        <div className="grid grid-cols-2 gap-4">
-          {books.map((book) => (
-            <div key={book.id} className="p-4 border rounded-lg">
-              <h3 className="font-semibold">{book.volumeInfo.title}</h3>
-              <p className="text-sm text-muted-foreground">
-                {book.volumeInfo.authors?.join(", ")}
-              </p>
-            </div>
-          ))}
-        </div>
-      )}
+        {books.length > 0 && (
+          <div className="grid grid-cols-2 gap-4">
+            {books.map((book) => (
+              <div key={book.id} className="p-4 border rounded-lg">
+                <h3 className="font-semibold">{book.volumeInfo.title}</h3>
+                <p className="text-sm text-muted-foreground">
+                  {book.volumeInfo.authors?.join(", ")}
+                </p>
+              </div>
+            ))}
+          </div>
+        )}
+
+      </div>
     </section>
   );
 };

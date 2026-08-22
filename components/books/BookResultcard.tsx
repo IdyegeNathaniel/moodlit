@@ -4,12 +4,12 @@ import Image from "next/image";
 import { BookOpen } from "lucide-react";
 import type { GoogleBookVolume } from "@/types/book";
 
-const BookResultCard = ({ book }: { book: GoogleBookVolume }) => {
+const BookResultCard: React.FC<{book: GoogleBookVolume, onClick?: () => void}> = ({ book, onClick }) => {
   const { title, authors, imageLinks, description } = book.volumeInfo;
   const thumbnail = imageLinks?.thumbnail?.replace("http://", "https://");
 
   return (
-    <div className="bg-bg-light border border-border-light rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 p-4 flex flex-col">
+    <div className="bg-bg-light border border-border-light rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 p-4 flex flex-col" onClick={onClick}>
       <div className="w-full aspect-2/3 relative rounded-lg overflow-hidden bg-gray-100 mb-3 flex items-center justify-center">
         {thumbnail ? (
           <Image
