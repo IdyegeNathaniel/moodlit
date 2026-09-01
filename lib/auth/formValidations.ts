@@ -2,7 +2,7 @@ import { z } from "zod";
 
 // Base schema for both register and signin
 const baseSchema = {
-  email: z.string("Enter a valid Email Address").min(1, "Enter a valid Email Address").toLowerCase(),
+  email: z.email("Enter a valid email address"),
   password: z
     .string()
     .min(8, "Password must be at least 8 characters")

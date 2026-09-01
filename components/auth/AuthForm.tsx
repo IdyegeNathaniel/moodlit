@@ -8,8 +8,10 @@ import Link from "next/link";
 import { useAuthForm } from "@/hooks/formHook";
 import Image from "next/image";
 import banner from "@/public/images/onboarding.jpg";
+import { useRouter } from "next/navigation";
 
 const AuthForm: React.FC<{ mode: "signup" | "signin" }> = ({ mode }) => {
+  const router = useRouter();
   const [showPassword, setShowPassword] = useState<boolean>(false);
 
   const { register, onSubmit, isRegister, errors, isSubmitting } =
@@ -39,7 +41,7 @@ const AuthForm: React.FC<{ mode: "signup" | "signin" }> = ({ mode }) => {
               size="sm"
               variant="ghost"
               className="text-sm border-none"
-              onClick={() => window.history.back()}
+              onClick={() => router.push("/")}
               aria-label="Go back"
             >
               <ChevronLeft className="w-4 h-4" />
@@ -55,7 +57,7 @@ const AuthForm: React.FC<{ mode: "signup" | "signin" }> = ({ mode }) => {
               </h2>
               <p className="text-sm text-neutral-500">
                 {isRegister
-                  ? "Join us to get started"
+                  ? "Creat an account on MoodLit to get started"
                   : "Access your MoodLit account"}
               </p>
             </div>
@@ -127,7 +129,7 @@ const AuthForm: React.FC<{ mode: "signup" | "signin" }> = ({ mode }) => {
                 <div className="flex items-center justify-between">
                   <label
                     htmlFor="password"
-                    className="uppercase text-sm font-medium text-gray-700"
+                    className="uppercase text-sm font-medium text-gray-400"
                   >
                     Password
                   </label>

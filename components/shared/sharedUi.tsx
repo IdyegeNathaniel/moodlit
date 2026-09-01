@@ -23,7 +23,7 @@ export const PageShell = ({
   children,
 }: PageShellProps) => {
   return (
-    <section className="w-full space-y-4 bg-neutral-100">
+    <section className="w-full space-y-4 bg-neutral-100 mb-10">
 
       {/* NAVIGATE BACK */}
         <div className="py-8 px-10">

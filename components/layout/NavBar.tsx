@@ -18,7 +18,7 @@ const NavBar: React.FC = () => {
       <Link href="/" className="flex shrink-0 items-center gap-3">
         <BookOpen size={32} color="#6B4E71" strokeWidth={2} />
         <h1
-          className="text-2xl font-bold bg-linear-to-r from-plum to-coral bg-clip-text text-transparent hidden sm:block
+          className="text-2xl font-bold bg-linear-to-r from-plum to-coral bg-clip-text text-transparent
         ">
           MoodLit
         </h1>

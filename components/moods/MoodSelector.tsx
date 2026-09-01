@@ -18,7 +18,7 @@ const MoodSelector = () => {
 
 
   return (
-    <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 px-4 md:px-6">
+    <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 px-4 md:px-6 py-10">
       {moods.map((mood) => (
         <BookCard key={mood.id} mood={mood} onClick={() => handleSelect(mood.id)}  />
       ))}

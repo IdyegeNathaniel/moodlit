@@ -46,16 +46,16 @@ const ProcessRows: React.FC<ProcessRowProps> = ({ step, index }) => {
 
 const ProcessSection: React.FC = () => {
   return (
-    <section className="w-full py-10 md:py-24">
+    <section className="w-full py-10 md:py-24 px-6">
       <div className="container max-w-7xl flex flex-col items-center justify-center mx-auto">
           <div className="mb-16 flex flex-col items-center text-center">
             <Eyebrow text="the process" />
           <h2 className="
-            font-bold font-syne text-4xl sm:text-5xl lg:text-6xl mb-3 bg-linear-to-r from-plum to-coral bg-clip-text text-transparent"
+            font-bold font-syne text-3xl sm:text-5xl lg:text-6xl md:mb-3 bg-linear-to-r from-plum to-coral bg-clip-text text-transparent"
           >
             How MoodLit Works
           </h2>
-          <p className="mt-4 text-lg text-gray-600 font-playfair font-semibold">
+          <p className="mt-2 md:mt-4 text-base text-light-muted font-playfair font-semibold">
             From mood to masterpiece in three simple steps.
           </p>
         </div>
